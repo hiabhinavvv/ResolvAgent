@@ -44,7 +44,7 @@ ResolvAgent is built on a modern Structured Tool Calling architecture. This is a
 
 Streamlit Frontend: The user interacts with the agent through the chat interface. Streamlit's session state maintains the conversational memory for each user's session.
 
-LLM Core: The agent's reasoning is powered by Groq's gemma2-9b-it model. It receives the user's query and the chat history.
+LLM Core: The agent's reasoning is powered by Groq's qwen/qwen3-32b model. It receives the user's query and the chat history.
 
 Tool Selection: The LLM plans its next step and, if necessary, makes a structured tool call. It has access to four distinct tools:
 
@@ -70,7 +70,7 @@ Docker Desktop must be installed and running on your system.
 
 Step 1: Clone the Repository
 
-git clone [https://github.com/hiabhinavvv/ResolvAgent.git]
+git clone https://github.com/hiabhinavvv/ResolvAgent.git
 cd ResolvAgent
 
 
