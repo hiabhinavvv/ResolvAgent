@@ -56,14 +56,6 @@ Final Response: The loop continues until the agent has enough information to for
 
 💻 Tech Stack
 
-Category
-
-Technology
-
-Purpose
-
-Orchestration
-
 LangChain
 
 Core framework for building the agent and managing tools.
@@ -121,7 +113,7 @@ cd ResolvAgent
 2. Download the Pre-Built Image
 Download the resolv-agent-image.tar file (approx. 5GB) from the following link:
 
-➡️ [LINK-TO-YOUR-GOOGLE-DRIVE-OR-HOSTING-SERVICE-HERE]
+➡️ https://drive.google.com/file/d/1mXr4bBEMQKHTRAsv3pSnK8lkPocWD-2u/view?usp=sharing
 
 Place this .tar file in the ResolvAgent project directory you just cloned.
 
