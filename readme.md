@@ -138,9 +138,11 @@ docker run -p 8501:8501 --env-file .env --name my-resolv-agent resolv-agent
 6. Access the Application
 Open your web browser and navigate to: http://localhost:8501
 
-Option 2: Build from Source (Requires Internet)
+Option 2: Build from Source (Alternative)
 
 Use this method only if you have a stable, unrestricted internet connection and want to build the image from the Dockerfile yourself.
+
+(Note: This build process may fail if you are on a network with a restrictive firewall, such as some corporate or university networks, that blocks downloads from Docker Hub.)
 
 1. Clone the Project
 
