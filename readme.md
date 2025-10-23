@@ -1,52 +1,54 @@
-ResolvAgent: An AI Support Ticket Resolution Agent
+<div align="center">
 
-ResolvAgent is an autonomous, conversational AI agent designed to automate the triage and resolution of common customer support tickets. It features an interactive web interface built with Streamlit and leverages a powerful tool-using framework to understand user problems, retrieve information, perform actions, and communicate solutions.
+ResolvAgent: AI Support Ticket Resolution Agent
 
-This project is fully containerized with Docker to guarantee a seamless and reproducible setup on any machine, eliminating environment and dependency conflicts.
+An autonomous, containerized AI agent that understands, resolves, and escalates support tickets.
 
-(A placeholder for a screenshot of your Streamlit app)
+</div>
+
+<p align="center">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Python-3.11-3776AB%3Flogo%3Dpython" alt="Python">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Streamlit-1.33-FF4B4B%3Flogo%3Dstreamlit" alt="Streamlit">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Docker-blue%3Flogo%3Ddocker" alt="Docker">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/LangChain-green%3Flogo%3Dlangchain" alt="LangChain">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Groq-yellow%3Flogo%3Dgroq" alt="Groq">
+</p>
+
+<!-- Optional: Add a screenshot of your app here -->
+
+<!-- <p align="center">
+<img src="PATH_TO_YOUR_SCREENSHOT.png" alt="ResolvAgent Screenshot" width="700">
+</p> -->
 
 📝 Project Overview
 
-In today's fast-paced digital environment, support teams are often overwhelmed with repetitive queries like password resets, billing questions, and simple configuration issues. ResolvAgent was built to tackle this challenge head-on. It acts as a first line of support, capable of handling a wide range of common tickets from start to finish.
+ResolvAgent is a full-stack, conversational AI application designed to automate the triage and resolution of common customer support tickets. It acts as an intelligent first line of support, capable of handling repetitive queries like password resets, billing questions, and plan upgrades.
 
-The agent follows a "Plan-Act" loop: it parses a user's ticket, plans the steps required for resolution, uses its available tools to act on that plan, and observes the outcome to decide its next move. This allows it to either solve the problem and draft a reply or intelligently escalate the ticket to a human agent when it recognizes its limitations.
+The agent follows a "Plan-Act" loop: it parses a user's ticket, plans the steps required, uses its available tools to act on that plan, and observes the outcome to decide its next move. This allows it to either solve the problem and draft a reply or intelligently escalate the ticket to a human agent when it recognizes its limitations.
 
-🛠️ Tech Stack
+✨ Key Features
 
-This project integrates a modern stack of AI and web development technologies:
+🤖 Autonomous Agent: Follows a "Plan-Act" loop to reason and resolve tickets from start to finish.
 
-AI & Machine Learning:
+🛠️ Structured Tool-Using: Intelligently selects from a suite of tools (RAG, Account APIs, Email Drafts) to perform real-world actions.
 
-LangChain: The core framework for building the agent, managing tools, and orchestrating the LLM.
+🖥️ Interactive Web UI: A real-time, conversational chat interface built with Streamlit.
 
-Groq: Provides the high-speed LLM (gemma2-9b-it) for the agent's reasoning and decision-making.
+🧠 RAG-Powered Knowledge: Uses a FAISS vector store (from a PDF knowledge base) to retrieve and reason about information.
 
-Sentence Transformers & FAISS: Used to create embeddings and a vector store for the RAG (Retrieval-Augmented Generation) tool, allowing the agent to search a knowledge base.
+🐳 Fully Containerized: Guaranteed one-command setup using Docker, eliminating all "it works on my machine" problems.
 
-PyPDF: For parsing the PDF knowledge base.
+💭 Conversational Memory: Remembers the context of the ongoing conversation to handle multi-turn queries.
 
-Frontend & UI:
+🛠️ How It Works: The Agent's Architecture
 
-Streamlit: Used to build the interactive, real-time chat interface for the web application.
+ResolvAgent is built on a modern Structured Tool Calling architecture. This is a highly reliable implementation of the conceptual "Plan-Act" loop.
 
-Backend & Infrastructure:
-
-Python: The primary programming language for the entire application.
-
-Docker: Used to containerize the application, ensuring a consistent and reproducible environment for deployment and submission.
-
-Dotenv: For securely managing the API key.
-
-🚀 How It Works: The Agent's Architecture
-
-ResolvAgent is built on a modern Structured Tool Calling architecture. This is a reliable implementation of the conceptual "Plan-Act" loop.
-
-Streamlit Frontend: The user interacts with the agent through the chat interface. Streamlit's session state maintains the conversational memory for each user's session.
+Streamlit Frontend: The user interacts with the agent via the chat interface. Streamlit's session_state maintains the conversational memory for each user.
 
 LLM Core: The agent's reasoning is powered by Groq's qwen/qwen3-32b model. It receives the user's query and the chat history.
 
-Tool Selection: The LLM plans its next step and, if necessary, makes a structured tool call. It has access to four distinct tools:
+Tool Selection: The LLM plans its next step and makes a structured tool call. It has access to four distinct tools:
 
 knowledge_base_retriever: Searches a vector database to answer questions from the IT Support Knowledge Base.pdf.
 
@@ -56,46 +58,128 @@ draft_reply: A mock API to format a final email response.
 
 escalate_ticket: A mock API to log tickets that cannot be solved automatically.
 
-Agent Executor: This LangChain runtime receives the structured tool call, executes the corresponding tool, and returns the result (the "observation") to the LLM.
+Agent Executor: This LangChain runtime receives the structured tool call, executes the corresponding tool, and returns the result (the "observation") back to the LLM.
 
 Final Response: The loop continues until the agent has enough information to formulate a final answer, which is then displayed in the UI.
 
+💻 Tech Stack
+
+Category
+
+Technology
+
+Purpose
+
+Orchestration
+
+LangChain
+
+Core framework for building the agent and managing tools.
+
+LLM Inference
+
+Groq
+
+Provides the high-speed qwen/qwen3-32b model for reasoning.
+
+Frontend
+
+Streamlit
+
+Building the interactive web UI.
+
+Containerization
+
+Docker
+
+Creating a reproducible, isolated environment.
+
+RAG Backend
+
+FAISS & Sentence-Transformers
+
+Vector store and text embeddings for RAG.
+
+PDF Parsing
+
+PyPDF
+
+Extracting text from the knowledge base document.
+
 ▶️ How to Run This Project
 
-This project has been containerized with Docker to ensure it runs perfectly on any computer.
+This project is fully containerized with Docker to ensure it runs perfectly on any computer.
 
 Prerequisites
 
 Docker Desktop must be installed and running on your system.
 
-Step 1: Clone the Repository
+You must have a Groq API key. Get one for free at GroqCloud.
 
-git clone https://github.com/hiabhinavvv/ResolvAgent.git
+Option 1: The Bulletproof Way (Recommended)
+
+This method uses a pre-built Docker image and does not require a stable internet connection to build. It is the fastest and most reliable way to run the application, as it bypasses any potential network or firewall issues.
+
+1. Get the Project Files
+
+git clone [https://github.com/hiabhinavvv/ResolvAgent.git](https://github.com/hiabhinavvv/ResolvAgent.git)
 cd ResolvAgent
 
 
-Step 2: Create the .env File
+2. Download the Pre-Built Image
+Download the resolv-agent-image.tar file (approx. 5GB) from the following link:
 
-The application needs your Groq API key to connect to the LLM.
+➡️ [LINK-TO-YOUR-GOOGLE-DRIVE-OR-HOSTING-SERVICE-HERE]
 
-In the root of the project folder, create a new file named .env.
+Place this .tar file in the ResolvAgent project directory you just cloned.
 
-Go to GroqCloud to generate a free API key.
+3. Load the Image into Docker
+This command loads the pre-built application into your local Docker.
 
-Add the key to your .env file. Ensure there are no extra spaces.
+docker load -i resolv-agent-image.tar
+
+
+4. Create Your .env File
+Create a new file named .env in the project directory and add your Groq API key.
 
 GROQ_API_KEY="your-secret-api-key-here"
 
 
-Step 3: Build the Docker Image
+5. Run the Container
+This command starts the application.
 
-This command uses the Dockerfile recipe to build a self-contained image with all dependencies and code.
+docker run -p 8501:8501 --env-file .env --name my-resolv-agent resolv-agent
+
+
+6. Access the Application
+Open your web browser and navigate to: http://localhost:8501
+
+Option 2: Build from Source (Requires Internet)
+
+Use this method only if you have a stable, unrestricted internet connection and want to build the image from the Dockerfile yourself.
+
+1. Clone the Project
+
+git clone [https://github.com/hiabhinavvv/ResolvAgent.git](https://github.com/hiabhinavvv/ResolvAgent.git)
+cd ResolvAgent
+
+
+2. Create Your .env File
+Create a file named .env and add your Groq API key.
+
+GROQ_API_KEY="your-secret-api-key-here"
+
+
+3. Build the Docker Image
+This command will download the Python base image and install all dependencies.
 
 docker build -t resolv-agent .
 
 
-Step 4: Run the Docker Container
-
-This command starts the application from the image you just built.
+4. Run the Container
 
 docker run -p 8501:8501 --env-file .env --name my-resolv-agent resolv-agent
+
+
+5. Access the Application
+Open your web browser and navigate to: http://localhost:8501
