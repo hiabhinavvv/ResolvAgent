@@ -6,14 +6,6 @@ An autonomous, containerized AI agent that understands, resolves, and escalates 
 
 </div>
 
-<p align="center">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Python-3.11-3776AB%3Flogo%3Dpython" alt="Python">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Streamlit-1.33-FF4B4B%3Flogo%3Dstreamlit" alt="Streamlit">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Docker-blue%3Flogo%3Ddocker" alt="Docker">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/LangChain-green%3Flogo%3Dlangchain" alt="LangChain">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Groq-yellow%3Flogo%3Dgroq" alt="Groq">
-</p>
-
 <!-- Optional: Add a screenshot of your app here -->
 
 <!-- <p align="center">
